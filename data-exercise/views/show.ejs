@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product CRUD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <main class="container-fluid">
+        <section class="row justify-content-center vh-100 bg-white text-primary align-items-center flex-column">
+            <h1>CRUD</h1>
+            <nav class=" w-25 d-flex justify-content-between align-items-center">
+                <a href="/create" class="btn btn-primary btn-block text-center">
+                    New
+                </a>
+                <a href="/<%= product.id %>/edit" class="btn btn-warning btn-block text-center">
+                    Edit
+                </a>
+                <form action="/<%= product.id %>?_method=DELETE" method="post">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </nav>
+            <section id="products" class="card-deck">
+                <article class="card">
+                    <section class="card-header text-center">
+                        <h2 class="card-title"><%= product.title %></h2>
+                        <span class="badge badge-success"><%= product.price %></span>
+                    </section>
+                    <section class="card-body">
+                        <p class="card-text">
+                            <%= product.description %>
+                        </p>
+                    </section>
+                </article>
+            </section>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

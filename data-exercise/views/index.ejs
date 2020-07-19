@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product CRUD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <main class="container-fluid">
+        <section class="row justify-content-center vh-100 bg-primary text-white align-items-center flex-column">
+            <h1>CRUD</h1>
+            <nav class=" w-25 d-flex justify-content-center align-items-center">
+                <a href="/create" class="btn btn-outline-light btn-block text-center">
+                    New
+                </a>
+            </nav>
+            <section id="products" class="<%= products.length == 0 ? "row" : "card-deck" %>">
+                <%if( products.length == 0){%>
+                    <div class="alert alert-white" role="alert">
+                        Not have products!
+                    </div>
+                <% } else{ %> 
+                    <% products.forEach(product => { %>
+                        <article class="card">
+                            <section class="card-header text-center">
+                                <h2 class="card-title"><%= product.title %></h2>
+                                <span class="badge badge-success"><%= product.price %></span>
+                            </section>
+                            <section class="card-body">
+                                <p class="card-text">
+                                    <%= product.description %>
+                                </p>
+                            </section>
+                            <section class="card-footer">
+                                <a class="card-link" href="/<%= product.id %>">Ver</a>
+                            </section>
+                        </article>
+                    <% }) %>
+                <% } %> 
+            </section>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
