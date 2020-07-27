@@ -10,10 +10,14 @@
 
     <main class="container-fluid">
         <section class="row vh-100 bg-danger text-white justify-content-center align-items-center flex-column">
-            <h1 class="display-4"> User Manager </h1>
+            <h1 class="display-4"> User Manager <%= user %> </h1>
             <nav class="w-50 d-flex justify-content-around align-items-center flex-wrap">
-                <a href="/login" class="btn btn-outline-light btn-block m-2">Login</a>
-                <a href="/register" class="btn btn-outline-light btn-block m-2">Register</a>
+                <% if (user) { %>
+                    <a href="/logout" class="btn btn-outline-light btn-block m-2">Logout</a>
+                <% } else { %>
+                    <a href="/login" class="btn btn-outline-light btn-block m-2">Login</a>
+                    <a href="/register" class="btn btn-outline-light btn-block m-2">Register</a>
+                <% } %>
             </nav>
         </section>
     </main>

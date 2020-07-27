@@ -14,16 +14,15 @@ app.use(express.urlencoded({extended:false}))
 
 const cookie = require("cookie-parser")
 
-app.use(cookie())
+app.use(cookie('keyboard cat'))
 
 const session = require("express-session")
 
-app.use(session({
-    secret:"1234",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
-}))
+app.use(session({resave:false, saveUninitialized:true, secret:'1234'}))
+
+// Middleware Aplication
+
+app.use(require("./middlewares/user"))
 
 // Aplication Routes
 

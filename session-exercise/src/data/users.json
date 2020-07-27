@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "email": "eduardomiguelvirgilio@gmail.com",
+    "password": "$2b$10$FqIZ4bOKOMff8MLCgX/iCuEqwHkZ.q3T2bFsF.FLfM7D0.LoKTKgy",
+    "id": 1
+  },
+  {
+    "email": "edu_96_2010@hotmail.com",
+    "password": "$2b$10$Yr25fXZy0TmeyqjdzKkS1u1OnvFkSqptMEOt7Cz5iWRlHVX190EvW",
+    "id": 2
+  },
+  {
+    "email": "fona@fona.com",
+    "password": "$2b$10$A1KKaboROfoSpfJFDwf3cOsbt.N2U6CE5S50laWx6W2xJ93ak9L6O",
+    "id": 3
+  }
+]
